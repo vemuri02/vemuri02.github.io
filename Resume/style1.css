@@ -92,3 +92,26 @@ body
     padding: 3px;
     margin-left: 10px;
 }
+
+.lc
+{
+    width: 60%;
+    height: 10vh;
+    float: left;
+    padding: 0 30px;
+}
+.lc img
+{
+    height: 10px;
+    margin-left: 5px;
+    margin-top: 5px;
+    float: left;
+}
+
+.lc h4
+{
+    display: inline-block;
+    
+    padding: 3px;
+    margin-left: 10px;
+}

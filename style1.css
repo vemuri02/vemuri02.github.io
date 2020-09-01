@@ -7,7 +7,7 @@
 body
 {
     background: #efefef;
-    font-family: sans-serif;
+    font-family: Raleway;
 }
 
 .profile-img
@@ -34,7 +34,8 @@ body
 }
 .profile-img img
 {
-    border-radius: 100%;
+    border-radius: 50%;
+    margin: auto;
 }
 .profile-info
 {
@@ -47,6 +48,10 @@ body
 {
     margin-top: 50px;
     margin-bottom: 30px;
+}
+.profile-info p
+{
+    margin-top: 10px;
 }
 
 .education
@@ -88,7 +93,72 @@ body
 .education h4
 {
     display: inline-block;
-    
     padding: 3px;
     margin-left: 10px;
+}
+ .lic
+ {
+    width: 60%;
+    margin-top: 90px;
+    height: 10vh;
+    float: left;
+    padding: 0 30px;
+ }
+ .lic img
+ {
+    height: 30px;
+    margin-left: 15px;
+    margin-top: 35px;
+    float: left;
+ }
+ .lic h4
+{
+    padding: 20px;
+    display: inline;
+    padding: 3px;
+    margin-left: 30px;
+}
+.lic p
+{
+    display: inline-block;
+
+    padding: 3px;
+    margin-left: 30px;
+
+}
+
+.skills
+{
+   width: 40%;
+   margin-top: 80px;
+   height: 10vh;
+   float: left;
+   padding: 0 30px;
+}
+.skills p
+{
+    padding: 13px;
+    margin-left: 20px;
+}
+
+.contact
+{   
+    width: 60%;
+    margin-top: 70px;
+    height: 10vh;
+    float: left;
+    padding: 0 30px;
+}
+
+.contact
+{
+    width: 60%;
+    height: 10vh;
+    float: left;
+    padding: 0 30px;
+}
+.contact
+{
+    margin-top: 50px;
+    margin-bottom: 30px;
 }
