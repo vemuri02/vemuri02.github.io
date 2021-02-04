@@ -1,0 +1,55 @@
+
+.loginPage {
+    width: 360px;
+    padding: 8% 0 0;
+    margin: auto;
+}
+.loginPage .form .login{
+    margin-top: -31px;
+    margin-bottom: 26px;
+}
+.form {
+    position: relative;
+    background: #FFFFFF;
+    margin: 0 auto 100px;
+    padding: 45px;
+    text-align: center;
+}
+.form input {
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    font-size: 14px;
+}
+.form .role{
+    width: 100px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.form button {
+    font-family: "Roboto", sans-serif;
+    background-color: #328f8a;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+
+
+
+body {
+    background-color: #328f8a;
+    background-image: linear-gradient(45deg,#328f8a,#08ac4b);
+
+
+
+    font-family: "Roboto", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}

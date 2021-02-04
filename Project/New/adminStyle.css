@@ -1,0 +1,230 @@
+body{
+    /*background-color: #f4f4f4;*/
+    background-image: url(./images/bodyimg.jpg);
+    color: #555;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 16px;
+    line-height: 1.6em;
+    margin: 0;
+}
+.container{
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+#main-header{
+    background-color: coral;
+    color: #fff;
+    text-align: center;
+
+}
+
+/*
+#navbar{
+    background-color: #333;
+    color: #fff;
+}
+#navbar ul{
+    padding: 0;
+    list-style: none;
+}
+#navbar li{
+    display: inline;
+}
+#navbar a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 15px;
+}
+#navbar #logout{
+    width: 5%;
+    float: right;
+    display: inline;
+    font-size: 18px;
+}
+#navbar button{
+    background: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+}
+*/
+
+
+
+
+#navbar{
+    background-color: #333;
+    color: #fff;
+}
+.bgroup{
+    width: 90%;
+    display: inline;
+}
+
+#navbar #logout{
+    float: right;
+    display: inline;
+    font-size: 18px;
+    width: 10%;
+}
+#navbar button{
+    display: inline;
+    padding: 15px;
+    border-collapse: collapse;
+    background: #333;
+    color: #fff;
+    cursor: pointer;
+    font-size: 18px;
+    border:none;
+    outline: none;
+}
+
+#navbar button:hover{
+    background-color: #4a1634;
+    /*background-color: #471039;*/
+}
+#navbar button.active{
+    color: black;
+    background-color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+#tabHeader{
+    min-height: 100px;
+    text-align: center;
+}
+#tabHeader h1{
+    color: #000000;
+    font-size: 30px;
+    line-height: 1.6em;
+    padding-top: 20px;
+}
+
+
+.inputFields{
+    /*background-color: #fff;*/
+}
+
+.my-form{
+    padding: 5px 20px 20px 20px;
+    text-align: center;
+}
+.form-group{
+    display: inline-block;
+    padding: 15px;
+}
+.my-form .form-group{
+    padding-bottom: 15px;
+}
+.my-form label,textarea{
+    display: block;
+    float: left;
+    padding: 5px 10px;
+    font-weight: bold;
+}
+.form-group text,textarea{
+    display: none;
+
+}
+.form-group select{
+    text-align: center;
+}
+.form-group textarea{
+    text-align: center;
+    display: inline-block;
+}
+
+.form-group input[type="text"],input[type="number"],input[type="password"]{
+    /*background-color: transparent;
+    border: none;
+    border-bottom: 2px solid black;*/
+    height:30px ;
+
+}
+.form-group select,textarea{
+    height:30px ;
+}
+
+.my-form #desc{
+    width: 350px;
+}
+
+.buttonClass{
+    padding: 5px 20px 20px 20px;
+    text-align: center;
+}
+.buttonClass button{
+    width: 100px;
+    font-size: 18px;
+    border-radius: 8px;
+   /* border: 2px solid #4CAF50;*/
+    border: 2px solid black;
+    text-align: center;
+}
+.button-group{
+    padding: 15px;
+    display: inline;
+}
+
+
+
+
+
+.table{
+    width: 80%;
+    text-align: center;
+    /*margin: auto;*/
+    margin: 30px auto;
+    border-collapse: collapse;
+
+}
+.table th{
+    background-color: darkslategray;
+    color: white;
+}
+.table td{
+    background-color: #fff;
+    font-family: 'optima';
+}
+
+.table th,tr,td{
+    width: 150px;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
