@@ -1,1 +1,0 @@
-<footer> Copyright © Manohar Vemuri</footer>
