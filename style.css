@@ -1,194 +1,117 @@
-/* Global styles */
-* {
+
+  body {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    background: #efefef;
-    font-family: Raleway;
-  }
-  
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 40px;
     display: flex;
-    flex-wrap: wrap;
   }
   
-  /* Profile section */
-  .profile-img {
-    flex: 1 1 40%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: #212F3D;
-    color: #fff;
-    padding: 40px;
+  #left {
+    width: 750px;
+    background-color: #f0f0f0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    text-align: center;
+  }
+  #left img {
+    width: 450px; /* Adjust the size of the circle */
+    height: 450px; /* Ensure the image maintains its aspect ratio */
+    border-radius: 50%; /* Make the image circular */
+    display: block; /* Remove any extra spacing around the image */
+    margin: 20px auto; /* Center the image horizontally and provide some margin */
+  }
+  #left a {
+    color: #4169e1; /* Set the initial blue link color */
+    text-decoration: none; /* Remove underlines from the link */
+    transition: color 0.3s; /* Add a smooth color transition effect */
   }
   
-  .profile-img h2 {
-    padding: 30px;
-    color: white;
-  }
-  
-  .profile-img h4 {
-    padding: 5px;
-    color: white;
-  }
-  
-  .profile-img img {
-    border-radius: 50%;
-    width: 300px;
-    height: 350px;
-  }
-  
-  .profile-info {
-    flex: 1 1 60%;
-    padding: 0 30px;
-  }
-  
-  .profile-info h1 {
-    font-size: 36px;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  
-  .profile-info p {
-    font-size: 18px;
-    margin-bottom: 20px;
-  }
-  
-  /* Summary section */
-  .summary {
-    flex: 1 1 100%;
-    padding: 0 30px;
-    margin-top: 20px;
-  }
-  
-  .summary h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    font-weight: bold;
-  }
-  
-  /* Education section */
-  .education {
-    flex: 1 1 100%;
-    padding: 0 30px;
-    margin-top: 40px;
-  }
-  
-  .education h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    font-weight: bold;
-  }
-  
-  .education img {
-    width: 30px;
-    margin-left: 15px;
-    margin-top: 35px;
-  }
-  
-  .education h4 {
-    display: inline-block;
-    padding: 3px;
-    margin-left: 10px;
-  }
-  
-  /* Licenses & Certifications section */
-  .lic {
-    flex: 1 1 100%;
-    padding: 0 30px;
-    margin-top: 40px;
-  }
-  
-  .lic img {
-    width: 30px;
-    margin-left: 15px;
-    margin-top: 35px;
-    float: left;
-  }
-  
-  .lic h4 {
-    padding: 20px;
-    display: inline;
-    padding: 3px;
-    margin-left: 30px;
-  }
-  
-  .lic p {
-    display: inline-block;
-    padding: 3px;
-    margin-left: 30px;
-  }
-  
-  /* Skills section */
-  .skills {
-    flex: 1 1 100%;
-    padding: 0 30px;
-    margin-top: 40px;
-  }
-  
-  .skills h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    font-weight: bold;
-  }
-  
-  .skills p {
+  #left a:hover {
+    color: #4169e1; /* Change the link color on hover to highlighted color */
     font-size: 18px;
   }
   
-  /* Contact section */
-  .contact {
-    flex: 1 1 100%;
-    padding: 0 30px;
-    margin-top: 40px;
-  }
-  
-  .contact h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    font-weight: bold;
-  }
-  
-  .social-media {
+  #social-links {
     display: flex;
     align-items: center;
-    margin-top: 20px;
+    margin-left: 240px;
+    /* padding-right: 20px; */
+    
   }
   
-  .social-media a {
-    margin-right: 10px;
+  #social-links a {
+    display: inline-block;
+    margin-left: 30px;
+    transition: transform 0.2s;
   }
   
-  .social-media img {
-    height: 30px;
+  #social-links img {
+    width: 50px; /* Adjust the width to make the icons smaller */
+    height: 50px; /* Adjust the height to maintain aspect ratio */
+  }
+  .social-links a:hover {
+    transform: scale(1.1); /* Enlarge the icon slightly on hover */
+  }
+
+
+
+  #right {
+    width:750px;
+    flex: 1;
+    padding-left: 500px;
+    background-color: #ffffff;
+    overflow-y: auto;
+    max-height: 100vh;
+    margin-left: 300px;
+  }
+  .right-align {
+    text-align: left; /* Align the content on the right side to the right */
+  }
+  .education-text {
+    font-weight: 100;
+  }
+  #projects{
+    width:750px;
+  }
+  a{
+    color: #4169e1; /* Set the initial blue link color */
+    text-decoration: none; /* Remove underlines from the link */
+    transition: color 0.3s; /* Add a smooth color transition effect */
+  }
+  a:hover {
+    color: #4169e1; /* Change the link color on hover to highlighted color */
+    font-size: 18px;
+  }
+
+
+  .oval-button {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 20px; /* Set border radius for rounded edges */
+    border: 2px solid black; /* Border with color */
+    background-color: transparent;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
   }
   
-  .contact-info p {
-    font-size: 16px;
+  .oval-button a {
+    display: block;
+    color: black; /* Initial color */
+    text-decoration: none;
   }
   
-  /* Responsive styles */
-  @media (max-width: 768px) {
-    .profile-img {
-      flex: 1 1 100%;
-      text-align: center;
-      margin-bottom: 30px;
-    }
-  
-    .profile-info {
-      flex: 1 1 100%;
-    }
-  
-    .container {
-      padding: 20px;
-    }
+  .oval-button:hover {
+    background-color:#d5f5ea; /* Change the background color */
   }
+  
+  .oval-button:hover a {
+    /* color: white; Change the text color on hover */
+  }
+  .cert-text li {
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd; /* Add border at the bottom of each list item */
+  }
+
   

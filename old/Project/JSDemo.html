@@ -1,0 +1,103 @@
+<html>
+    <body>
+        <h1>JS</h1>
+        <p id="demo"></p>
+        <p id=demo1></p>
+        <script>
+            var person={
+                fisrstname:"Manohar",
+                lastname:"Vemuri",
+                age:20,
+                fullname:function(){
+                    return this.fisrstname+" "+this.lastname;
+                }
+
+            };
+            document.getElementById('demo').innerHTML=person.fullname()+ " is " + person["age"]+ " years old.";
+
+            document.write('it\'s alright');
+
+
+            var p1=5,p2=10;
+            var res=myfun(p1,p2);
+            document.write(res);
+            function myfun(p1,p2){
+                return p1*p2;
+
+            }
+            var str="Manohar Vemuri";
+            var res=str.slice(-14,-6);
+            var res1=str.slice(10);
+            document.write("<br>"+res);
+            document.write("<br>"+res1);
+            var txt="a,b,c,d,e";
+            var arr=txt.split(",");
+            document.write("<br>"+arr[1]);
+            document.write("<br>");
+            var cars = ["BMW", "Volvo", "Saab", "Ford", "Fiat", "Audi"];
+            for(i of cars){
+                //document.write(cars[i]+"<br>");
+                document.write(i+"<br>");
+            }
+            x=5;
+            document.write("<br> outside:"+x);
+            scope();
+            function scope(){
+                let x=10;
+                document.write("<br>inside:"+x);
+            }
+            document.write("<br>out:"+x)
+
+            var hello;
+            hello=()=>{
+                return "arrow function"
+            }
+            document.write("<br>"+hello());
+
+            class myCar{
+                constructor(name,year){
+                    this.name=name;
+                    this.year=year;
+                }
+                carAge(x){
+                    return x-this.year;
+                }
+            }
+
+
+            let date=new Date();
+            let Car=new myCar("Indica",2015);
+            document.write("<br>my car is "+Car.carAge(date.getFullYear())+" years old");
+
+            myobj={
+
+            name:"manohar",
+            "employee":[
+                18113251,18113252
+            ]
+        };
+        document.write("<br>"+myobj.name+" "+myobj.employee[0]);
+        function keyevent(){
+            if(event.keyCode==13){
+                window.open();
+
+            }
+            
+        }
+
+
+    
+
+
+
+            document.write("<br>");
+
+            
+
+        </script>
+        <button onclick="this.innerHTML=Date()">Date?</button>
+        <input type="text" name="" id="firstname" onkeypress="keyevent()">firstname</input>
+
+
+    </body>
+</html>

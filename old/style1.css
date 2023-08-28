@@ -1,0 +1,164 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body
+{
+    background: #efefef;
+    font-family: Raleway;
+}
+
+.profile-img
+{
+    background-color: #212F3D;
+    height: 150%;
+}
+.profile-img h2
+{
+    padding: 30px;
+    color: white;
+}
+.profile-img h4
+{
+    padding: 5px;
+    color: white;
+}
+.profile-img
+{
+
+    padding: 40px;
+    float: right;
+    padding: None;
+}
+.profile-img img
+{
+    border-radius: 50%;
+    margin: auto;
+}
+.profile-info
+{
+    width: 60%;
+    height: 10vh;
+    float: left;
+    padding: 0 30px;
+}
+.profile-info
+{
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+.profile-info p
+{
+    margin-top: 10px;
+}
+
+.education
+{
+    width: 60%;
+    height: 10vh;
+    float: left;
+    padding: 0 30px;
+}
+.summary
+{
+    margin-top: 20px;
+    width: 60%;
+    height: 10vh;
+    float: left;
+    padding: 0 30px;
+}
+.social-media img
+{
+    height: 30px;
+    margin-right: 15px;
+
+}
+.social-media
+{
+    margin-top: 20px;
+    margin-left: 15px;
+}
+.summary p
+{
+    margin-top: 10px;
+}
+.education img
+{
+    height: 30px;
+    margin-left: 15px;
+    margin-top: 35px;
+}
+.education h4
+{
+    display: inline-block;
+    padding: 3px;
+    margin-left: 10px;
+}
+ .lic
+ {
+    width: 60%;
+    margin-top: 190px;
+    height: 10vh;
+    float: left;
+    padding: 0 30px;
+ }
+ .lic img
+ {
+    height: 30px;
+    margin-left: 15px;
+    margin-top: 35px;
+    float: left;
+ }
+ .lic h4
+{
+    padding: 20px;
+    display: inline;
+    padding: 3px;
+    margin-left: 30px;
+}
+.lic p
+{
+    display: inline-block;
+
+    padding: 3px;
+    margin-left: 30px;
+
+}
+
+.skills
+{
+   width: 40%;
+   margin-top: 300px;
+   height: 10vh;
+   float: left;
+   padding: 0 30px;
+}
+.skills p
+{
+    padding: 13px;
+    margin-left: 20px;
+}
+
+.contact
+{   
+    width: 60%;
+    margin-top: 70px;
+    height: 10vh;
+    float: left;
+    padding: 0 30px;
+}
+
+.contact
+{
+    width: 60%;
+    height: 10vh;
+    float: left;
+    padding: 0 30px;
+}
+.contact
+{
+    margin-top: 70px;
+    margin-bottom: 30px;
+}
