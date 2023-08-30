@@ -61,21 +61,26 @@ body {
 }
 
 #right {
-  width: 50%; /* Half of the screen */
+  width: 50%;
+  /* flex-grow: 1; */
   background-color: #ffffff;
   overflow-y: auto;
   max-height: 100vh;
   padding: 20px;
-}
+} 
+
 
 .right-align {
   text-align: left;
+  width: auto;
 }
 
 .education-text {
   font-weight: 100;
 }
-
+#work{
+  width: 100%;
+}
 #projects {
   width: 100%;
 }
