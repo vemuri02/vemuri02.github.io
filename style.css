@@ -1,117 +1,156 @@
+/* Common styles for both desktop and mobile */
 
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  overflow:hidden;
+}
+
+#container {
+  display: flex;
+  width: 100%;
+}
+
+#left {
+  width: 50%; /* Half of the screen */
+  background-color: #f0f0f0;
+  text-align: center;
+  padding: 20px;
+  overflow: hidden;
+}
+
+#left img {
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  margin: 20px auto;
+}
+
+#left a {
+  color: #4169e1;
+  text-decoration: none;
+  transition: color 0.3s, font-size 0.3s;
+}
+
+#left a:hover {
+  color: #4169e1;
+  font-size: 18px;
+}
+
+#social-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+#social-links a {
+  display: inline-block;
+  margin: 0 10px;
+  transition: transform 0.2s;
+}
+
+#social-links img {
+  width: 50px;
+  height: 50px;
+}
+
+.social-links a:hover {
+  transform: scale(1.1);
+}
+
+#right {
+  width: 50%; /* Half of the screen */
+  background-color: #ffffff;
+  overflow-y: auto;
+  max-height: 100vh;
+  padding: 20px;
+}
+
+.right-align {
+  text-align: left;
+}
+
+.education-text {
+  font-weight: 100;
+}
+
+#projects {
+  width: 100%;
+}
+
+a {
+  color: #4169e1;
+  text-decoration: none;
+  transition: color 0.3s, font-size 0.3s;
+}
+
+a:hover {
+  color: #4169e1;
+  font-size: 18px;
+}
+
+.oval-button {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 20px;
+  border: 2px solid black;
+  background-color: transparent;
+  text-align: center;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.oval-button a {
+  display: block;
+  color: black;
+  text-decoration: none;
+}
+
+.oval-button:hover {
+  background-color: #d5f5ea;
+}
+
+.cert-text li {
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Media query for screens smaller than 768px (typical tablet and mobile sizes) */
+
+@media (max-width: 768px) {
   body {
-    margin: 0;
-    padding: 0;
-    display: flex;
+    flex-direction: column; /* Stack content vertically on mobile */
   }
-  
-  #left {
-    width: 750px;
-    background-color: #f0f0f0;
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    overflow: hidden;
-    text-align: center;
+
+  #container {
+    flex-direction: column;
   }
+
+  #left,
+  #right {
+    width: 100%;
+    padding: 20px;
+    margin-left: 0;
+  }
+
   #left img {
-    width: 450px; /* Adjust the size of the circle */
-    height: 450px; /* Ensure the image maintains its aspect ratio */
-    border-radius: 50%; /* Make the image circular */
-    display: block; /* Remove any extra spacing around the image */
-    margin: 20px auto; /* Center the image horizontally and provide some margin */
+    width: 300px;
+    height: 300px;
+    margin: 10px auto;
   }
-  #left a {
-    color: #4169e1; /* Set the initial blue link color */
-    text-decoration: none; /* Remove underlines from the link */
-    transition: color 0.3s; /* Add a smooth color transition effect */
-  }
-  
-  #left a:hover {
-    color: #4169e1; /* Change the link color on hover to highlighted color */
-    font-size: 18px;
-  }
-  
+
   #social-links {
-    display: flex;
-    align-items: center;
-    margin-left: 240px;
-    /* padding-right: 20px; */
-    
+    justify-content: center;
+    margin-top: 10px;
   }
-  
+
   #social-links a {
-    display: inline-block;
-    margin-left: 30px;
-    transition: transform 0.2s;
+    margin: 0 10px;
   }
-  
-  #social-links img {
-    width: 50px; /* Adjust the width to make the icons smaller */
-    height: 50px; /* Adjust the height to maintain aspect ratio */
-  }
-  .social-links a:hover {
-    transform: scale(1.1); /* Enlarge the icon slightly on hover */
-  }
-
-
 
   #right {
-    width:750px;
-    flex: 1;
-    padding-left: 500px;
-    background-color: #ffffff;
-    overflow-y: auto;
-    max-height: 100vh;
-    margin-left: 300px;
+    padding-left: 20px;
+    margin-top: 10px;
   }
-  .right-align {
-    text-align: left; /* Align the content on the right side to the right */
-  }
-  .education-text {
-    font-weight: 100;
-  }
-  #projects{
-    width:750px;
-  }
-  a{
-    color: #4169e1; /* Set the initial blue link color */
-    text-decoration: none; /* Remove underlines from the link */
-    transition: color 0.3s; /* Add a smooth color transition effect */
-  }
-  a:hover {
-    color: #4169e1; /* Change the link color on hover to highlighted color */
-    font-size: 18px;
-  }
-
-
-  .oval-button {
-    display: inline-block;
-    padding: 4px 8px;
-    border-radius: 20px; /* Set border radius for rounded edges */
-    border: 2px solid black; /* Border with color */
-    background-color: transparent;
-    text-align: center;
-    transition: background-color 0.3s, color 0.3s;
-  }
-  
-  .oval-button a {
-    display: block;
-    color: black; /* Initial color */
-    text-decoration: none;
-  }
-  
-  .oval-button:hover {
-    background-color:#d5f5ea; /* Change the background color */
-  }
-  
-  .oval-button:hover a {
-    /* color: white; Change the text color on hover */
-  }
-  .cert-text li {
-    padding: 10px 0;
-    border-bottom: 1px solid #ddd; /* Add border at the bottom of each list item */
-  }
-
-  
+}
