@@ -1,21 +1,27 @@
 {
   "files": {
-    "main.css": "/static/css/main.b67ec370.css",
-    "main.js": "/static/js/main.56d27d82.js",
-    "static/js/453.9b1a9f3d.chunk.js": "/static/js/453.9b1a9f3d.chunk.js",
-    "static/media/mvemuri6642.jpg": "/static/media/mvemuri6642.0ce846befa5e15d04882.jpg",
-    "static/media/crr.png": "/static/media/crr.5686c57f822ba3256503.png",
-    "static/media/jntuk.png": "/static/media/jntuk.42ba8833e648084734ef.png",
-    "static/media/soundsafe.png": "/static/media/soundsafe.4d562f2c3d74fda0963a.png",
-    "static/media/ramesh.png": "/static/media/ramesh.fb997c5694cca2f6db6c.png",
-    "static/media/iit2.png": "/static/media/iit2.0ef28cf31c6f7dc43275.png",
+    "main.css": "/static/css/main.d196dd78.css",
+    "main.js": "/static/js/main.616b86ce.js",
+    "static/media/keti_realtime_detection2.png": "/static/media/keti_realtime_detection2.4e8646ecdf6338a72daa.png",
+    "static/media/keti_overview.png": "/static/media/keti_overview.b538528ab63aab47bcb5.png",
+    "static/media/keti_realtime_detection.png": "/static/media/keti_realtime_detection.9b9139d8d7c8d7e4c099.png",
+    "static/media/keti_results1.png": "/static/media/keti_results1.2d759d6b0719fcbdb246.png",
+    "static/media/keti_testbed.png": "/static/media/keti_testbed.7f3c3f5f8de26b09887d.png",
+    "static/media/optimization_results.png": "/static/media/optimization_results.7bb3e87d98aeb4712017.png",
+    "static/media/iso_visit1.jpg": "/static/media/iso_visit1.2519e7c5f495cb3b6bb6.jpg",
+    "static/media/visit1_1.jpg": "/static/media/visit1_1.9e90d682e5e1006eadf2.jpg",
+    "static/media/iso_visit2.jpg": "/static/media/iso_visit2.9ebd29ccc6caa8f267c4.jpg",
+    "static/media/visit1.jpg": "/static/media/visit1.cb3b4ba3fd90a7cfdc69.jpg",
+    "static/media/quantization.png": "/static/media/quantization.732bf6e65fe8a358f9b7.png",
+    "static/media/keti_workflow.png": "/static/media/keti_workflow.5114b1f4b180711dd564.png",
+    "static/media/rscd_image.jpg": "/static/media/rscd_image.393d9efe382f9460f137.jpg",
+    "static/media/profile.jpg": "/static/media/profile.c5581cd3608e16ce129a.jpg",
     "index.html": "/index.html",
-    "main.b67ec370.css.map": "/static/css/main.b67ec370.css.map",
-    "main.56d27d82.js.map": "/static/js/main.56d27d82.js.map",
-    "453.9b1a9f3d.chunk.js.map": "/static/js/453.9b1a9f3d.chunk.js.map"
+    "main.d196dd78.css.map": "/static/css/main.d196dd78.css.map",
+    "main.616b86ce.js.map": "/static/js/main.616b86ce.js.map"
   },
   "entrypoints": [
-    "static/css/main.b67ec370.css",
-    "static/js/main.56d27d82.js"
+    "static/css/main.d196dd78.css",
+    "static/js/main.616b86ce.js"
   ]
 }
