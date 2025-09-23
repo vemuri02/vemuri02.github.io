@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.d196dd78.css",
-    "main.js": "/static/js/main.a028d41d.js",
+    "main.js": "/static/js/main.606c3e57.js",
     "static/media/keti_realtime_detection2.png": "/static/media/keti_realtime_detection2.4e8646ecdf6338a72daa.png",
     "static/media/keti_overview.png": "/static/media/keti_overview.b538528ab63aab47bcb5.png",
     "static/media/keti_realtime_detection.png": "/static/media/keti_realtime_detection.9b9139d8d7c8d7e4c099.png",
@@ -18,10 +18,10 @@
     "static/media/profile.jpg": "/static/media/profile.c5581cd3608e16ce129a.jpg",
     "index.html": "/index.html",
     "main.d196dd78.css.map": "/static/css/main.d196dd78.css.map",
-    "main.a028d41d.js.map": "/static/js/main.a028d41d.js.map"
+    "main.606c3e57.js.map": "/static/js/main.606c3e57.js.map"
   },
   "entrypoints": [
     "static/css/main.d196dd78.css",
-    "static/js/main.a028d41d.js"
+    "static/js/main.606c3e57.js"
   ]
 }
