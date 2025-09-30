@@ -34,11 +34,11 @@ function App() {
     useEffect(() => {
         async function logVisitor() {
             try {
-                // 1️⃣ Get visitor location from ipapi (browser sees real IP)
+                // Client-side geo lookup
                 const res = await fetch('https://ipapi.co/json/');
                 const location = await res.json();
 
-                // 2️⃣ Send location to Netlify function
+                // Send to Netlify function
                 await fetch('/.netlify/functions/log-visitor', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
@@ -55,7 +55,8 @@ function App() {
         }
 
         logVisitor();
-    }, []); // run once on initial load
+    }, []);
+
 
     // Scroll to top whenever section changes
     useEffect(() => {
