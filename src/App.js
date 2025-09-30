@@ -56,6 +56,7 @@ function App() {
 
 
 
+
     // Scroll to top whenever section changes
     useEffect(() => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
