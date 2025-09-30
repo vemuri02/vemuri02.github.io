@@ -25,33 +25,35 @@ function App() {
 
     // ✅ Log visitor in the real browser only
     useEffect(() => {
+        // Only run if window exists (prevents prerender issues)
+        if (typeof window === 'undefined') return;
+
         async function logVisitor() {
             try {
-                // Fetch location directly from the visitor's browser
+                // Fetch real location from ipapi
                 const res = await fetch("https://ipapi.co/json/");
                 const location = await res.json();
 
-                // Send data to serverless function
+                // POST to serverless function
                 await fetch("/.netlify/functions/log-visitor", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({
-                        country: location.country_name || "Unknown",
-                        city: location.city || "Unknown",
-                        page: window.location.pathname || "home",
+                        country: location.country_name,
+                        city: location.city,
+                        page: window.location.pathname,
                         timestamp: new Date().toISOString(),
                     }),
                 });
             } catch (err) {
-                console.error("Visitor logging failed:", err);
+                console.error("Analytics failed:", err);
             }
         }
 
-        // Only log for real browsers, not Netlify previews or prerender
-        if (!window.location.hostname.includes("netlify.app")) {
-            logVisitor();
-        }
+        // Use setTimeout to ensure prerendering has finished
+        setTimeout(logVisitor, 1000);
     }, []);
+
 
     // Scroll to top when section changes
     useEffect(() => {
