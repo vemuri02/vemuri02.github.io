@@ -1,23 +1,22 @@
-// netlify/functions/log-visitor.js
-
 import fetch from "node-fetch";
 import { Client } from "pg";
 
 export async function handler(event, context) {
     try {
-        // 1️⃣ Get visitor IP safely
-        const ip = event.headers["x-forwarded-for"]?.split(",")[0]
-            || event.headers["client-ip"]
-            || "";
+        // Get visitor IP (Netlify production header first)
+        const ip =
+            event.headers["x-nf-client-connection-ip"] ||
+            event.headers["x-forwarded-for"]?.split(",")[0] ||
+            event.headers["client-ip"] ||
+            "";
 
-        // 2️⃣ Always use a test IP if real IP not detected
-        // This ensures you get a proper country/city in testing
+        // Fallback for testing
         const geoIP = ip || "8.8.8.8";
 
         console.log("Detected IP:", ip);
         console.log("Headers:", event.headers);
 
-        // 3️⃣ Fetch location safely
+        // Geo lookup
         let geo = { country_name: "Unknown", city: "Unknown" };
         try {
             const res = await fetch(`https://ipapi.co/${geoIP}/json/`);
@@ -26,7 +25,7 @@ export async function handler(event, context) {
             console.error("Geo lookup failed:", err);
         }
 
-        // 4️⃣ Prepare data
+        // Prepare data
         const data = {
             country: geo.country_name || "Unknown",
             city: geo.city || "Unknown",
@@ -34,7 +33,7 @@ export async function handler(event, context) {
             timestamp: new Date().toISOString()
         };
 
-        // 5️⃣ Connect to Neon and insert
+        // Connect to Neon DB
         const client = new Client({
             connectionString: process.env.DATABASE_URL,
             ssl: { rejectUnauthorized: false }
@@ -50,15 +49,12 @@ export async function handler(event, context) {
             await client.end();
         }
 
-        // 6️⃣ Return success
         return {
             statusCode: 200,
             body: JSON.stringify({ success: true, data })
         };
-
     } catch (err) {
         console.error("Function failed:", err);
-
         return {
             statusCode: 500,
             body: JSON.stringify({ error: "Failed to log visitor", details: err.message })
