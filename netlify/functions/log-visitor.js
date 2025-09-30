@@ -6,19 +6,27 @@ import { Client } from "pg";
 export async function handler(event, context) {
     try {
         // 1️⃣ Get visitor IP safely
-        const ip = event.headers["x-forwarded-for"]?.split(",")[0] || "";
+        // Netlify passes x-forwarded-for for real visitors
+        let ip = event.headers["x-forwarded-for"]?.split(",")[0]
+            || event.headers["client-ip"]
+            || "";
 
-        // 2️⃣ Fetch location safely
+        // 2️⃣ Use a test IP if IP is empty (useful in dev / gh-pages preview)
+        const isProd = process.env.CONTEXT === "production";
+        const geoIP = ip || (isProd ? "" : "8.8.8.8"); // Google DNS for testing
+
+        // 3️⃣ Fetch location safely
         let geo = { country_name: "Unknown", city: "Unknown" };
-        if (ip) {
+        if (geoIP) {
             try {
-                const res = await fetch(`https://ipapi.co/${ip}/json/`);
+                const res = await fetch(`https://ipapi.co/${geoIP}/json/`);
                 geo = await res.json();
             } catch (err) {
                 console.error("Geo lookup failed:", err);
             }
         }
 
+        // 4️⃣ Prepare data
         const data = {
             country: geo.country_name || "Unknown",
             city: geo.city || "Unknown",
@@ -26,7 +34,7 @@ export async function handler(event, context) {
             timestamp: new Date().toISOString()
         };
 
-        // 3️⃣ Connect to Neon safely
+        // 5️⃣ Connect to Neon and insert
         const client = new Client({
             connectionString: process.env.DATABASE_URL,
             ssl: { rejectUnauthorized: false }
@@ -42,10 +50,10 @@ export async function handler(event, context) {
             await client.end();
         }
 
-        // 4️⃣ Return success
+        // 6️⃣ Return success
         return {
             statusCode: 200,
-            body: JSON.stringify({ success: true })
+            body: JSON.stringify({ success: true, data })
         };
 
     } catch (err) {
