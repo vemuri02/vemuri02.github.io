@@ -16,9 +16,7 @@ function App() {
             case 'home':
                 return <Home />;
             case 'about':
-                return <About
-                    setActiveSection={setActiveSection}
-                />;
+                return <About setActiveSection={setActiveSection} />;
             case 'research':
                 return <Research />;
             case 'blog':
@@ -32,17 +30,26 @@ function App() {
         }
     };
 
-    // Scroll to top whenever the section changes
+    // ✅ 1. Log visitor on initial load
+    useEffect(() => {
+        fetch(`/.netlify/functions/log-visitor?page=${window.location.pathname}`)
+            .catch(err => console.error("Analytics failed:", err));
+    }, []); // empty array = runs once on first load
+
+    // ✅ 2. Log again if section changes (optional, for per-page analytics)
+    useEffect(() => {
+        fetch(`/.netlify/functions/log-visitor?page=${activeSection}`)
+            .catch(err => console.error("Analytics failed:", err));
+    }, [activeSection]);
+
+    // Scroll to top whenever section changes
     useEffect(() => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }, [activeSection]);
 
     return (
         <div className="App">
-            <Header
-                activeSection={activeSection}
-                setActiveSection={setActiveSection}
-            />
+            <Header activeSection={activeSection} setActiveSection={setActiveSection} />
             <main>
                 {renderSection()}
             </main>

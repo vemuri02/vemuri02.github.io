@@ -163,9 +163,9 @@ const Contact = () => {
                                 >
                                     <option value="">Select a subject</option>
                                     <option value="research-collaboration">Research Collaboration</option>
-                                    <option value="speaking-opportunity">Speaking Opportunity</option>
-                                    <option value="industry-partnership">Industry Partnership</option>
-                                    <option value="mentoring">Mentoring Request</option>
+                                    {/* <option value="speaking-opportunity">Speaking Opportunity</option> */}
+                                    {/* <option value="industry-partnership">Industry Partnership</option> */}
+                                    {/* <option value="mentoring">Mentoring Request</option> */}
                                     <option value="general-inquiry">General Inquiry</option>
                                     <option value="other">Other</option>
                                 </select>
