@@ -34,28 +34,26 @@ function App() {
     useEffect(() => {
         async function logVisitor() {
             try {
-                // Client-side geo lookup
-                const res = await fetch('https://ipapi.co/json/');
+                const res = await fetch("https://ipapi.co/json/");
                 const location = await res.json();
 
-                // Send to Netlify function
-                await fetch('/.netlify/functions/log-visitor', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
+                await fetch("/.netlify/functions/log-visitor", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({
-                        country: location.country_name || 'Unknown',
-                        city: location.city || 'Unknown',
+                        country: location.country_name || "Unknown",
+                        city: location.city || "Unknown",
                         page: window.location.pathname,
                         timestamp: new Date().toISOString(),
                     }),
                 });
             } catch (err) {
-                console.error('Analytics failed:', err);
+                console.error("Analytics failed:", err);
             }
         }
-
         logVisitor();
     }, []);
+
 
 
     // Scroll to top whenever section changes
