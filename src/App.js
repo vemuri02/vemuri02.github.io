@@ -32,9 +32,12 @@ function App() {
 
     // ✅ Log visitor with real location
     useEffect(() => {
+        if (typeof window === "undefined") return; // skip server/prerender
+
         async function logVisitor() {
             try {
                 const res = await fetch("https://ipapi.co/json/");
+                if (!res.ok) throw new Error("Failed to fetch location");
                 const location = await res.json();
 
                 await fetch("/.netlify/functions/log-visitor", {
@@ -51,6 +54,7 @@ function App() {
                 console.error("Analytics failed:", err);
             }
         }
+
         logVisitor();
     }, []);
 
