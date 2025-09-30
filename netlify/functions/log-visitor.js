@@ -6,24 +6,24 @@ import { Client } from "pg";
 export async function handler(event, context) {
     try {
         // 1️⃣ Get visitor IP safely
-        // Netlify passes x-forwarded-for for real visitors
-        let ip = event.headers["x-forwarded-for"]?.split(",")[0]
+        const ip = event.headers["x-forwarded-for"]?.split(",")[0]
             || event.headers["client-ip"]
             || "";
 
-        // 2️⃣ Use a test IP if IP is empty (useful in dev / gh-pages preview)
-        const isProd = process.env.CONTEXT === "production";
-        const geoIP = ip || (isProd ? "" : "8.8.8.8"); // Google DNS for testing
+        // 2️⃣ Always use a test IP if real IP not detected
+        // This ensures you get a proper country/city in testing
+        const geoIP = ip || "8.8.8.8";
+
+        console.log("Detected IP:", ip);
+        console.log("Headers:", event.headers);
 
         // 3️⃣ Fetch location safely
         let geo = { country_name: "Unknown", city: "Unknown" };
-        if (geoIP) {
-            try {
-                const res = await fetch(`https://ipapi.co/${geoIP}/json/`);
-                geo = await res.json();
-            } catch (err) {
-                console.error("Geo lookup failed:", err);
-            }
+        try {
+            const res = await fetch(`https://ipapi.co/${geoIP}/json/`);
+            geo = await res.json();
+        } catch (err) {
+            console.error("Geo lookup failed:", err);
         }
 
         // 4️⃣ Prepare data
