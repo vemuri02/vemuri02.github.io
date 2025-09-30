@@ -30,17 +30,32 @@ function App() {
         }
     };
 
-    // ✅ 1. Log visitor on initial load
+    // ✅ Log visitor with real location
     useEffect(() => {
-        fetch(`/.netlify/functions/log-visitor?page=${window.location.pathname}`)
-            .catch(err => console.error("Analytics failed:", err));
-    }, []); // empty array = runs once on first load
+        async function logVisitor() {
+            try {
+                // 1️⃣ Get visitor location from ipapi (browser sees real IP)
+                const res = await fetch('https://ipapi.co/json/');
+                const location = await res.json();
 
-    // ✅ 2. Log again if section changes (optional, for per-page analytics)
-    useEffect(() => {
-        fetch(`/.netlify/functions/log-visitor?page=${activeSection}`)
-            .catch(err => console.error("Analytics failed:", err));
-    }, [activeSection]);
+                // 2️⃣ Send location to Netlify function
+                await fetch('/.netlify/functions/log-visitor', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        country: location.country_name || 'Unknown',
+                        city: location.city || 'Unknown',
+                        page: window.location.pathname,
+                        timestamp: new Date().toISOString(),
+                    }),
+                });
+            } catch (err) {
+                console.error('Analytics failed:', err);
+            }
+        }
+
+        logVisitor();
+    }, []); // run once on initial load
 
     // Scroll to top whenever section changes
     useEffect(() => {
@@ -50,9 +65,7 @@ function App() {
     return (
         <div className="App">
             <Header activeSection={activeSection} setActiveSection={setActiveSection} />
-            <main>
-                {renderSection()}
-            </main>
+            <main>{renderSection()}</main>
         </div>
     );
 }
